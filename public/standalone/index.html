@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhanush R - Java Full Stack Developer Portfolio</title>
+  <meta name="description" content="Ultra Pro Violetic Portfolio of Dhanush R, Java Full Stack Developer specializing in Core Java 21, Spring Boot, MySQL, and React.js." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Icons (VS Code & Browser Support) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Ultra Pro Violetic Theme CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Particle Background Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Ambient Violet Neon Nebula Glows -->
+  <div class="ambient-glow glow-top-right"></div>
+  <div class="ambient-glow glow-bottom-left"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scrollProgressBar"></div>
+
+  <!-- INTERACTIVE AI DOLL ENTRANCE GATEWAY OVERLAY -->
+  <div id="entranceGateway" class="entrance-gateway">
+    <div class="entrance-card">
+      <div class="entrance-accent-line"></div>
+      
+      <div class="badge rounded-pill bg-purple-950-70 border border-purple-500-30 text-purple-300 font-mono text-xs px-3 py-2 mb-4 d-inline-flex align-items-center gap-2">
+        <span class="status-dot"></span>
+        <span>PORTFOLIO ENTRANCE GATEWAY</span>
+        <span class="text-purple-400 opacity-50">•</span>
+        <span id="entranceTimerText">Auto-enter in 12s</span>
+      </div>
+
+      <!-- AI Doll Avatar & Animated Speech Bubble -->
+      <div class="entrance-avatar-wrap">
+        <div class="entrance-avatar-glow"></div>
+        
+        <div class="entrance-speech-bubble">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <span class="fs-4">👋</span>
+            <strong class="text-white font-outfit fs-6">Hi there! Welcome!</strong>
+          </div>
+          <div class="text-purple-200 font-sans text-xs mt-1">
+            I'm the AI companion for Dhanush R's Full Stack Portfolio.
+          </div>
+        </div>
+
+        <img src="welcome-boy.png" alt="AI Welcome Doll" class="entrance-avatar-img" onerror="this.src='images/welcome-boy.png'">
+      </div>
+
+      <!-- Name & Credentials -->
+      <h1 class="font-syne fw-bolder text-white fs-2 mb-2">
+        Dhanush <span class="gradient-text">R</span>
+      </h1>
+      <p class="text-purple-200 font-outfit fw-semibold fs-6 mb-3">
+        Java Full Stack Developer • Spring Boot & React
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-2 font-mono text-xs text-purple-300 mb-4">
+        <span class="px-2 py-1 rounded-2 bg-purple-950-60 border border-purple-500-20">
+          <i class="bi bi-mortarboard-fill text-purple me-1"></i> B.E. CSE (8.1 CGPA)
+        </span>
+        <span class="px-2 py-1 rounded-2 bg-purple-950-60 border border-purple-500-20">
+          <i class="bi bi-briefcase-fill text-cyan me-1"></i> Login360 Internship
+        </span>
+        <span class="px-2 py-1 rounded-2 bg-emerald-subtle border border-emerald text-emerald">
+          <i class="bi bi-check-circle-fill me-1"></i> Immediate Joiner
+        </span>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+        <button id="enterPortfolioBtn" class="action-btn primary-btn px-4 py-3 justify-content-center">
+          <span>Enter Portfolio</span>
+          <i class="bi bi-arrow-right"></i>
+        </button>
+        <button id="sayHiVoiceBtn" class="action-btn secondary-btn px-3 py-3 justify-content-center">
+          <i class="bi bi-volume-up-fill text-fuchsia"></i>
+          <span id="sayHiVoiceText">Say Hi (Voice Greeting)</span>
+        </button>
+      </div>
+
+      <div class="mt-4 pt-3 border-top border-purple-500-20 d-flex justify-content-between text-xs font-mono text-purple-400 opacity-75">
+        <span>Smooth scroll navigation enabled</span>
+        <a href="#" id="skipIntroLink" class="text-purple-200 text-decoration-underline">Skip Intro →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container-xl">
+      <a class="navbar-brand d-flex items-center gap-3" href="#home">
+        <div class="brand-avatar">
+          <img src="mine2.jpeg" alt="Dhanush R" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+        </div>
+        <div class="brand-text">
+          <div class="d-flex items-center gap-2">
+            <span class="brand-name">Dhanush <span class="gradient-text">R</span></span>
+            <span class="status-dot"></span>
+          </div>
+          <span class="brand-role">Java Full Stack Developer</span>
+        </div>
+      </a>
+
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-3 text-white"></i>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav align-items-lg-center gap-lg-2 my-3 my-lg-0">
+          <li class="nav-item"><a class="nav-link custom-nav-link" href="#home"><i class="bi bi-terminal"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link custom-nav-link" href="#about"><i class="bi bi-person"></i> About</a></li>
+          <li class="nav-item"><a class="nav-link custom-nav-link" href="#skills"><i class="bi bi-code-slash"></i> Skills</a></li>
+          <li class="nav-item"><a class="nav-link custom-nav-link" href="#projects"><i class="bi bi-layers"></i> Projects</a></li>
+          <li class="nav-item"><a class="nav-link custom-nav-link" href="#resume"><i class="bi bi-file-earmark-person-fill"></i> Resume</a></li>
+          <li class="nav-item"><a class="nav-link custom-nav-link" href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2 ms-lg-3">
+          <button id="reopenEntranceBtn" class="action-btn icon-btn" title="View AI Doll Welcome Greeting">
+            <span class="fs-6">👋</span>
+          </button>
+          <button id="audioToggleBtn" class="action-btn icon-btn" title="Toggle Sound Chimes">
+            <i class="bi bi-volume-up-fill" id="audioIcon"></i>
+          </button>
+          <button id="voiceNarratorNavBtn" class="action-btn icon-btn" title="Voice Tour">
+            <i class="bi bi-broadcast-pin"></i>
+          </button>
+          <button id="recruiterModalNavBtn" class="action-btn primary-btn">
+            <i class="bi bi-briefcase-fill"></i>
+            <span>Hire Dhanush</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section d-flex align-items-center">
+    <div class="container-xl">
+      <div class="row align-items-center g-5">
+        
+        <!-- Hero Content Left -->
+        <div class="col-lg-7 text-center text-lg-start">
+          <div class="status-pill mb-3">
+            <span class="pulse-emerald"></span>
+            <span>AVAILABLE FOR IMMEDIATE JOINING • CHENNAI</span>
+          </div>
+
+          <h1 class="hero-title">
+            Architecting Robust <span class="gradient-text">Java Backends</span> & Seamless Interfaces.
+          </h1>
+
+          <p class="hero-bio">
+            Passionate Java Full Stack Developer and Computer Science Engineering graduate (<strong>8.1 CGPA</strong>). I engineer high-throughput backend services using <strong>Core Java 21</strong> and <strong>Spring Boot</strong>, modeled with normalized <strong>SQL databases</strong> and interactive <strong>React.js</strong> client experiences.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3 mt-4">
+            <button id="heroVoiceGreetingBtn" class="action-btn primary-btn pulse-glow">
+              <i class="bi bi-volume-up-fill"></i>
+              <span>Listen to Voice Intro</span>
+            </button>
+            <a href="#projects" class="action-btn secondary-btn">
+              <i class="bi bi-code-square"></i>
+              <span>Explore Projects</span>
+            </a>
+            <a href="#resume" class="action-btn ghost-btn">
+              <i class="bi bi-file-earmark-arrow-down"></i>
+              <span>External Resume</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="row g-3 mt-4 pt-3 border-top border-purple-500-20">
+            <div class="col-4 col-sm-3">
+              <div class="metric-card">
+                <div class="metric-val">8.1</div>
+                <div class="metric-lbl">B.E. CGPA</div>
+              </div>
+            </div>
+            <div class="col-4 col-sm-3">
+              <div class="metric-card">
+                <div class="metric-val">Java 21</div>
+                <div class="metric-lbl">Core & OOP</div>
+              </div>
+            </div>
+            <div class="col-4 col-sm-3">
+              <div class="metric-card">
+                <div class="metric-val">3+</div>
+                <div class="metric-lbl">Full-Stack Apps</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero 3D Profile Flip Card Right -->
+        <div class="col-lg-5 d-flex justify-content-center">
+          <div class="flip-card-container">
+            <div id="heroFlipCard" class="flip-card">
+              
+              <!-- Front Side: Developer Portrait -->
+              <div class="flip-card-face flip-card-front">
+                <div class="profile-img-box">
+                  <img src="mine2.jpeg" alt="Dhanush R" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80'">
+                </div>
+                <div class="profile-info text-center mt-3">
+                  <h3 class="profile-name">Dhanush R</h3>
+                  <p class="profile-sub">B.E. CSE • Java Full Stack Engineer</p>
+                  <button id="flipToBoyBtn" class="flip-prompt-btn">
+                    <i class="bi bi-arrow-repeat"></i>
+                    <span>Flip to Meet Avatar</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Back Side: Welcome Boy Avatar -->
+              <div class="flip-card-face flip-card-back">
+                <div class="welcome-speech-bubble">
+                  <span>Hi there! Welcome to my portfolio! 👋</span>
+                </div>
+                <div class="avatar-box">
+                  <img src="welcome-boy.png" alt="Welcome Avatar" class="avatar-img" onerror="this.src='https://illustrations.popertee.com/illustrations/avatar-3d.png'">
+                </div>
+                <div class="text-center mt-3">
+                  <h4 class="text-white fw-bold mb-1 fs-6 font-outfit">Interactive Guide</h4>
+                  <button id="avatarVoiceBtn" class="action-btn primary-btn btn-sm">
+                    <i class="bi bi-mic-fill"></i>
+                    <span>Say Hello</span>
+                  </button>
+                  <button id="flipBackBtn" class="flip-prompt-btn mt-2">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Back to Photo</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container-xl">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag"><i class="bi bi-person-badge"></i> ACADEMICS & BACKGROUND</span>
+        <h2 class="section-title">Bridging Theory & <span class="gradient-text">Enterprise Engineering</span></h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="glass-card h-100">
+            <div class="card-icon text-purple"><i class="bi bi-mortarboard-fill"></i></div>
+            <h4 class="card-title">Computer Science Engineering</h4>
+            <p class="card-desc">Graduated from Asian College of Engineering and Technology (2022–2026) with an <strong>8.1 CGPA</strong>. Deep grounding in Data Structures, Relational DBMS, and Networking.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card h-100">
+            <div class="card-icon text-fuchsia"><i class="bi bi-award-fill"></i></div>
+            <h4 class="card-title">Java Full Stack Internship</h4>
+            <p class="card-desc">Active internship at <strong>Login360</strong>, learning and building practical skills in Core Java 21, Spring Boot REST microservices, JPA Hibernate, MySQL, and React.js.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card h-100">
+            <div class="card-icon text-cyan"><i class="bi bi-briefcase-fill"></i></div>
+            <h4 class="card-title">Sales & Marketing Internship</h4>
+            <p class="card-desc">Completed a 2-month internship at <strong>Prime Vector Private Limited</strong> focused on sales and marketing, commercial client outreach, and professional teamwork.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-5">
+    <div class="container-xl">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag"><i class="bi bi-gear-wide-connected"></i> PROFICIENCY MATRIX</span>
+        <h2 class="section-title">Core <span class="gradient-text">Technical Radar</span></h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="glass-card h-100">
+            <h4 class="card-title mb-4"><i class="bi bi-code-slash text-purple"></i> Programming & Frameworks</h4>
+            
+            <div class="skill-bar-box mb-3">
+              <div class="d-flex justify-content-between mb-1 text-sm font-mono">
+                <span>Core Java 21 (OOP, Multithreading, Sockets)</span>
+                <span class="text-purple">90%</span>
+              </div>
+              <div class="progress custom-progress"><div class="progress-bar bg-gradient-purple" style="width: 90%"></div></div>
+            </div>
+
+            <div class="skill-bar-box mb-3">
+              <div class="d-flex justify-content-between mb-1 text-sm font-mono">
+                <span>Spring Boot & REST Microservices</span>
+                <span class="text-purple">82%</span>
+              </div>
+              <div class="progress custom-progress"><div class="progress-bar bg-gradient-purple" style="width: 82%"></div></div>
+            </div>
+
+            <div class="skill-bar-box mb-3">
+              <div class="d-flex justify-content-between mb-1 text-sm font-mono">
+                <span>SQL & Relational Databases (MySQL, SQLite)</span>
+                <span class="text-purple">80%</span>
+              </div>
+              <div class="progress custom-progress"><div class="progress-bar bg-gradient-purple" style="width: 80%"></div></div>
+            </div>
+
+            <div class="skill-bar-box mb-3">
+              <div class="d-flex justify-content-between mb-1 text-sm font-mono">
+                <span>React.js & Modern JavaScript</span>
+                <span class="text-purple">78%</span>
+              </div>
+              <div class="progress custom-progress"><div class="progress-bar bg-gradient-purple" style="width: 78%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="glass-card h-100">
+            <h4 class="card-title mb-4"><i class="bi bi-tools text-fuchsia"></i> Developer Toolchain & Standards</h4>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge-tag">Git & GitHub</span>
+              <span class="badge-tag">Apache Maven</span>
+              <span class="badge-tag">Postman REST</span>
+              <span class="badge-tag">IntelliJ IDEA</span>
+              <span class="badge-tag">VS Code</span>
+              <span class="badge-tag">Tailwind CSS</span>
+              <span class="badge-tag">Bootstrap 5</span>
+              <span class="badge-tag">HTML5 & CSS3</span>
+              <span class="badge-tag">RESTful API Design</span>
+              <span class="badge-tag">JUnit Testing</span>
+              <span class="badge-tag">Socket Programming</span>
+              <span class="badge-tag">3NF Database Normalization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-5">
+    <div class="container-xl">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag"><i class="bi bi-kanban"></i> ENGINEERING HIGHLIGHTS</span>
+        <h2 class="section-title">Flagship <span class="gradient-text">Architectural Projects</span></h2>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card glass-card">
+            <div class="project-badge">Java 21 • Spring Boot</div>
+            <h4 class="card-title mt-2">Movie Ticket Booking System</h4>
+            <p class="card-desc">Full-stack cinema reservation portal featuring real-time seat lock state matrices to eliminate double-booking race conditions.</p>
+            <div class="project-tags">
+              <span>Java 21</span><span>Spring Boot</span><span>MySQL</span><span>React</span>
+            </div>
+            <div class="d-flex gap-2 mt-4">
+              <a href="https://github.com/dhanutech04" target="_blank" class="action-btn secondary-btn btn-sm"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card glass-card">
+            <div class="project-badge">React • E-Commerce</div>
+            <h4 class="card-title mt-2">RedStore Commercial Platform</h4>
+            <p class="card-desc">Commercial storefront with dynamic product catalog filters, real-time cart computation, and fluid responsive design.</p>
+            <div class="project-tags">
+              <span>React.js</span><span>JavaScript</span><span>Tailwind</span><span>CSS3</span>
+            </div>
+            <div class="d-flex gap-2 mt-4">
+              <a href="https://github.com/dhanutech04" target="_blank" class="action-btn secondary-btn btn-sm"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card glass-card">
+            <div class="project-badge">Core Java • Cybersecurity</div>
+            <h4 class="card-title mt-2">Firewall Threat Detection Engine</h4>
+            <p class="card-desc">Multi-threaded socket analyzer inspecting network headers against threat signatures and writing security logs to SQL.</p>
+            <div class="project-tags">
+              <span>Core Java</span><span>Sockets</span><span>Multithreading</span><span>SQL</span>
+            </div>
+            <div class="d-flex gap-2 mt-4">
+              <a href="https://github.com/dhanutech04" target="_blank" class="action-btn secondary-btn btn-sm"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTERNAL RESUME SECTION -->
+  <section id="resume" class="py-5">
+    <div class="container-xl">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag"><i class="bi bi-shield-check"></i> VERIFIED CAREER DOSSIER</span>
+        <h2 class="section-title">External Resume & <span class="gradient-text">Credentials</span></h2>
+        <p class="text-purple-300 text-sm max-w-600 mx-auto">Access Dhanush R's verified engineering curriculum vitae and practical internship credentials in full stack engineering and sales communication.</p>
+      </div>
+
+      <div class="row g-4 align-items-start">
+        
+        <!-- Left: Resume Document Preview Card -->
+        <div class="col-lg-8">
+          <div class="glass-card resume-document-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 border-bottom border-purple-500-20 mb-4">
+              <div>
+                <h3 class="fw-bold mb-1 text-white font-syne">DHANUSH R</h3>
+                <span class="font-mono text-xs text-purple-300">Java Full Stack Developer • B.E. CSE (8.1 CGPA)</span>
+              </div>
+              <a id="mainResumeOpenBtn" href="Dhanush_R_Resume 1.pdf" target="_blank" rel="noopener noreferrer" class="action-btn primary-btn btn-sm">
+                <i class="bi bi-file-earmark-pdf-fill"></i>
+                <span>Open External Resume (PDF)</span>
+                <i class="bi bi-box-arrow-up-right ms-1"></i>
+              </a>
+            </div>
+
+            <div class="resume-body space-y-3 font-sans text-xs text-purple-200">
+              <div class="p-3 rounded-3 bg-purple-950-40 border border-purple-500-20">
+                <strong class="text-white d-block mb-1 font-outfit">Core Career Summary:</strong>
+                Detail-oriented Computer Science graduate with 8.1 CGPA. Currently doing an internship at Login360, learning and building practical skills in Core Java 21, Spring Boot REST microservices, and React.js. Completed a 2-month internship at Prime Vector Private Limited focused on sales and marketing.
+              </div>
+
+              <div class="p-3 rounded-3 bg-purple-950-40 border border-purple-500-20">
+                <strong class="text-white d-block mb-1 font-outfit">Education & Internships:</strong>
+                • <strong>B.E. Computer Science & Engineering</strong> (8.1 CGPA) — Asian College of Eng. & Tech (2022–2026)<br>
+                • <strong>Java Full Stack Developer (Internship)</strong> — Login360, Chennai (Learning & building enterprise skills)<br>
+                • <strong>Sales & Marketing (Internship - 2 Months)</strong> — Prime Vector Private Limited
+              </div>
+
+              <div class="p-3 rounded-3 bg-purple-950-40 border border-purple-500-20">
+                <strong class="text-white d-block mb-1 font-outfit">Technical Arsenal:</strong>
+                Core Java 21, Spring Boot, MySQL, SQLite, React.js, JavaScript, HTML5, CSS3, Bootstrap 5, Tailwind CSS, Git, Maven, Postman.
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 pt-4 border-top border-purple-500-20 mt-4">
+              <a href="Dhanush_R_Resume 1.pdf" download class="action-btn secondary-btn btn-sm">
+                <i class="bi bi-download"></i> Download PDF
+              </a>
+              <button id="copyResumeLinkBtn" class="action-btn ghost-btn btn-sm">
+                <i class="bi bi-clipboard"></i> Copy Resume URL
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Profile Snapshot Card -->
+        <div class="col-lg-4">
+          <div class="glass-card mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="card-title mb-0"><i class="bi bi-person-check-fill text-purple"></i> Profile Snapshot</h4>
+              <span class="badge bg-emerald-subtle text-emerald border border-emerald font-mono">Immediate Joiner</span>
+            </div>
+            <div class="p-3 rounded-3 bg-purple-950-40 border border-purple-500-20 mb-3">
+              <span class="text-purple-400 font-mono text-xs d-block">SPECIALIZATION</span>
+              <strong class="text-white d-block font-outfit fs-6">Java Full Stack Developer</strong>
+              <span class="text-purple-300 font-mono text-xs">Core Java 21 • Spring Boot • SQL • React</span>
+            </div>
+            <ul class="list-unstyled text-xs space-y-2 font-mono text-purple-200 mb-4">
+              <li><i class="bi bi-check-circle-fill text-emerald me-2"></i><strong>Degree:</strong> B.E. CSE (8.1 CGPA)</li>
+              <li><i class="bi bi-check-circle-fill text-emerald me-2"></i><strong>Current:</strong> Login360 Internship</li>
+              <li><i class="bi bi-check-circle-fill text-emerald me-2"></i><strong>Experience:</strong> Prime Vector (2 Mos Sales)</li>
+              <li><i class="bi bi-check-circle-fill text-emerald me-2"></i><strong>Notice:</strong> Immediate Joining (0 Days)</li>
+              <li><i class="bi bi-geo-alt-fill text-purple me-2"></i><strong>Location:</strong> Chennai, India</li>
+            </ul>
+            <a href="Dhanush_R_Resume 1.pdf" target="_blank" rel="noopener noreferrer" class="action-btn primary-btn btn-sm w-100 justify-content-center">
+              <i class="bi bi-file-earmark-pdf-fill"></i>
+              <span>Open Resume (PDF)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container-xl">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag"><i class="bi bi-envelope-paper"></i> GET IN TOUCH</span>
+        <h2 class="section-title">Let's Build <span class="gradient-text">Together</span></h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <a href="mailto:dhanutech04@gmail.com" class="contact-card glass-card text-center d-block text-decoration-none">
+            <i class="bi bi-envelope-at-fill fs-2 text-purple mb-2"></i>
+            <h5 class="text-white font-outfit">Email</h5>
+            <span class="text-purple-300 text-xs font-mono">dhanutech04@gmail.com</span>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="tel:+919361902056" class="contact-card glass-card text-center d-block text-decoration-none">
+            <i class="bi bi-telephone-fill fs-2 text-fuchsia mb-2"></i>
+            <h5 class="text-white font-outfit">Phone / Call</h5>
+            <span class="text-purple-300 text-xs font-mono">+91 9361902056</span>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="https://wa.me/919361902056" target="_blank" class="contact-card glass-card text-center d-block text-decoration-none">
+            <i class="bi bi-whatsapp fs-2 text-emerald mb-2"></i>
+            <h5 class="text-white font-outfit">WhatsApp</h5>
+            <span class="text-purple-300 text-xs font-mono">Direct Chat Available</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-4 text-center border-top border-purple-500-20">
+    <div class="container">
+      <p class="mb-1 text-white font-syne fw-bold">Dhanush R • Java Full Stack Developer</p>
+      <p class="text-purple-400 text-xs font-mono mb-0">© 2026 Dhanush R. Built with HTML, CSS, JavaScript & Bootstrap 5.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTION DOCK: AT BOTTOM RIGHT -->
+  <div class="floating-action-dock">
+    
+    <!-- Floating Voice Narrator Button -->
+    <button id="floatingVoiceBtn" class="dock-btn voice-btn" title="Voice Narrator">
+      <i class="bi bi-broadcast"></i>
+    </button>
+
+    <!-- EXTERNAL RESUME DOCK: UPPER SET DIRECTLY ABOVE THE AI BOT BUTTON -->
+    <div id="externalResumeDock" class="external-resume-dock" aria-live="polite">
+      
+      <!-- Panel pops up above the toggle button -->
+      <div id="externalResumePanel" class="external-resume-panel" hidden>
+        <div class="d-flex justify-content-between align-items-center pb-2 border-bottom border-purple-500-20 mb-2">
+          <div class="external-resume-panel-title">
+            <i class="bi bi-file-earmark-person-fill text-purple"></i>
+            <span>Dhanush R Resume</span>
+          </div>
+          <button id="closeResumePanelBtn" class="btn-close btn-close-white" style="font-size: 0.65rem;" aria-label="Close"></button>
+        </div>
+        
+        <p class="text-purple-300 text-xs font-mono mb-2">Java Full Stack Developer • B.E. CSE (8.1 CGPA)<br><span class="text-purple-400">Login360 Internship • Prime Vector (2 Mos Sales)</span></p>
+        
+        <a id="externalResumeLink" href="Dhanush_R_Resume 1.pdf" target="_blank" rel="noopener noreferrer" class="external-resume-link mb-2">
+          <i class="bi bi-file-earmark-pdf-fill"></i>
+          <span>Open External Resume</span>
+          <i class="bi bi-box-arrow-up-right"></i>
+        </a>
+        <div class="d-flex gap-2">
+          <a href="Dhanush_R_Resume 1.pdf" download class="btn btn-outline-purple btn-sm w-100 font-mono text-xs py-1">
+            <i class="bi bi-download"></i> Download
+          </a>
+          <button id="dockCopyResumeBtn" class="btn btn-outline-purple btn-sm w-100 font-mono text-xs py-1">
+            <i class="bi bi-clipboard"></i> Copy Link
+          </button>
+        </div>
+      </div>
+
+      <!-- Toggle Button (Set directly above AI Bot) -->
+      <button id="externalResumeToggle" class="external-resume-toggle" type="button" aria-expanded="false" aria-controls="externalResumePanel">
+        <i class="bi bi-file-earmark-person-fill"></i>
+        <span>Resume</span>
+        <span class="resume-dock-pill">PDF</span>
+      </button>
+
+    </div>
+
+    <!-- FLOATING AI ASSISTANT BOT BUTTON -->
+    <button id="floatingAiBotBtn" class="dock-btn bot-btn" title="Dhanush AI Assistant">
+      <i class="bi bi-robot"></i>
+      <span class="online-indicator"></span>
+    </button>
+
+  </div>
+
+  <!-- AI ASSISTANT DRAWER -->
+  <div id="aiDrawer" class="ai-drawer" hidden>
+    <div class="ai-drawer-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-robot fs-5 text-purple"></i>
+        <div>
+          <h5 class="mb-0 text-white font-outfit fs-6">Dhanush AI Assistant</h5>
+          <span class="text-emerald text-xs font-mono">● Online & Ready</span>
+        </div>
+      </div>
+      <button id="closeAiDrawerBtn" class="btn-close btn-close-white"></button>
+    </div>
+    
+    <div id="aiChatLog" class="ai-chat-log">
+      <div class="bot-msg">
+        Hello! I am Dhanush's AI Career Assistant. Feel free to ask about his Java skills, Spring Boot projects, or hiring availability!
+      </div>
+    </div>
+
+    <div class="ai-drawer-footer">
+      <div class="quick-topics mb-2">
+        <button class="quick-topic-btn">Skills</button>
+        <button class="quick-topic-btn">Projects</button>
+        <button class="quick-topic-btn">Education</button>
+        <button class="quick-topic-btn">Immediate Joining</button>
+      </div>
+      <div class="input-group">
+        <input type="text" id="aiInput" class="form-control form-control-sm bg-dark border-purple-500 text-white" placeholder="Ask about Dhanush...">
+        <button id="aiSendBtn" class="btn btn-purple btn-sm"><i class="bi bi-send"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCROLL & ALIGNMENT PROPERTIES HUD WIDGET -->
+  <div id="scrollAlignmentHud" class="scroll-alignment-hud">
+    <!-- Collapsed Pill Button -->
+    <button id="hudPillBtn" class="hud-pill-btn" title="View Scroll & Alignment Properties">
+      <i class="bi bi-crosshair text-purple"></i>
+      <span id="hudActiveSectionText">#home</span>
+      <span class="text-purple-400 opacity-50">•</span>
+      <span class="text-emerald d-flex align-items-center gap-1">
+        <span class="status-dot"></span> Aligned
+      </span>
+      <span id="hudScrollPercentText" class="badge bg-purple-950-60 border border-purple-500-20 text-purple-300 font-mono">0%</span>
+      <i class="bi bi-arrows-angle-expand text-purple-400 opacity-75"></i>
+    </button>
+
+    <!-- Expanded Telemetry Panel -->
+    <div id="hudPanel" class="hud-panel">
+      <div class="d-flex justify-content-between align-items-center pb-2 border-bottom border-purple-500-20 mb-3">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-crosshair text-purple"></i>
+          <strong class="font-outfit text-white fs-6">Scroll & Alignment HUD</strong>
+        </div>
+        <button id="hudCloseBtn" class="btn-close btn-close-white" style="font-size: 0.65rem;" aria-label="Minimize HUD"></button>
+      </div>
+
+      <!-- Real-time metrics grid -->
+      <div class="hud-grid">
+        <div class="hud-stat-box">
+          <span class="text-purple-300 opacity-75 d-block" style="font-size: 0.6rem;">SCROLL DEPTH</span>
+          <span id="hudScrollPxText" class="fw-bold text-white font-mono">0px (0%)</span>
+        </div>
+        <div class="hud-stat-box">
+          <span class="text-purple-300 opacity-75 d-block" style="font-size: 0.6rem;">ACTIVE ALIGNMENT</span>
+          <span id="hudTargetStatus" class="fw-bold text-emerald font-mono">#home</span>
+        </div>
+      </div>
+
+      <div class="p-2 rounded-2 bg-purple-950-40 border border-purple-500-20 mb-3 font-mono" style="font-size: 0.68rem;">
+        <span class="text-purple-300">Offset Status: </span>
+        <strong id="hudOffsetLabel" class="text-white">Top-Aligned (Snapped)</strong>
+      </div>
+
+      <div class="text-purple-400 fw-semibold mb-1" style="font-size: 0.65rem;">SMOOTH ALIGN TARGETS:</div>
+      <div class="hud-targets-grid mb-2">
+        <button class="hud-target-btn active" data-target="home">Home</button>
+        <button class="hud-target-btn" data-target="about">About</button>
+        <button class="hud-target-btn" data-target="skills">Skills</button>
+        <button class="hud-target-btn" data-target="projects">Projects</button>
+        <button class="hud-target-btn" data-target="resume">Resume</button>
+        <button class="hud-target-btn" data-target="contact">Contact</button>
+      </div>
+
+      <div class="pt-2 border-top border-purple-500-20 d-flex justify-content-between text-purple-400 opacity-75" style="font-size: 0.6rem;">
+        <span>scroll-behavior: smooth</span>
+        <span class="text-emerald">60 FPS Hardware</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECRUITER DOSSIER MODAL -->
+  <div class="modal fade" id="recruiterModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-modal text-white">
+        <div class="modal-header border-purple-500-20">
+          <h5 class="modal-title font-outfit"><i class="bi bi-briefcase-fill text-purple me-2"></i> Recruiter Fast-Track Dossier</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body font-sans text-sm space-y-3">
+          <div class="d-flex justify-content-between border-bottom border-purple-500-20 pb-2">
+            <span class="text-purple-300">Full Name:</span>
+            <span class="fw-bold">Dhanush R</span>
+          </div>
+          <div class="d-flex justify-content-between border-bottom border-purple-500-20 pb-2">
+            <span class="text-purple-300">Role:</span>
+            <span class="text-purple">Java Full Stack Developer</span>
+          </div>
+          <div class="d-flex justify-content-between border-bottom border-purple-500-20 pb-2">
+            <span class="text-purple-300">Notice Period:</span>
+            <span class="badge bg-emerald">Immediate Joiner (0 Days)</span>
+          </div>
+          <div class="d-flex justify-content-between border-bottom border-purple-500-20 pb-2">
+            <span class="text-purple-300">Education:</span>
+            <span>B.E. CSE (8.1 CGPA)</span>
+          </div>
+          <div class="d-flex justify-content-between border-bottom border-purple-500-20 pb-2">
+            <span class="text-purple-300">Location:</span>
+            <span>Chennai, India (Open to Relocate & Remote)</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span class="text-purple-300">Direct Contact:</span>
+            <span class="font-mono text-xs">+91 9361902056</span>
+          </div>
+        </div>
+        <div class="modal-footer border-purple-500-20">
+          <a href="Dhanush_R_Resume 1.pdf" target="_blank" class="action-btn primary-btn btn-sm">
+            <i class="bi bi-file-earmark-pdf"></i> Open Resume PDF
+          </a>
+          <a href="https://wa.me/919361902056" target="_blank" class="action-btn secondary-btn btn-sm">
+            <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Standalone Script -->
+  <script src="script.js"></script>
+</body>
+</html>
